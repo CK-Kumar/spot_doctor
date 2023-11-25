@@ -1,68 +1,85 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:spot_doctor/common/theme.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: LoginForm(),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: Center(
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                'user.start_session'.tr(),
+                              ),
+                              const SizedBox(height: 28.0),
+                              Text(
+                                'user.email'.tr(),
+                                style: titleTextStyle,
+                              ),
+                              TextFormField(
+                                keyboardType: TextInputType.emailAddress,
+                                autofocus: false,
+                                // No need for a specific style or decoration
+                                controller: TextEditingController(),
+                              ),
+                              const SizedBox(height: 28.0),
+                              Text('user.password'.tr()),
+                              TextFormField(
+                                autofocus: false,
+                                obscureText: true,
+                                // No need for a specific style or decoration
+                                controller: TextEditingController(),
+                              ),
+                              const SizedBox(height: 54.0),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: SafeArea(
+                        bottom: true,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                // Handle button press
+                              },
+                              child: Text(
+                                'user.start_session'.tr().toUpperCase(),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const TextField(
-          decoration: InputDecoration(
-            hintText: 'User ID',
-            prefixIcon: Icon(Icons.person),
-          ),
-        ),
-        const SizedBox(height: 16.0),
-        const TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            hintText: 'Password',
-            prefixIcon: Icon(Icons.lock),
-          ),
-        ),
-        const SizedBox(height: 32.0),
-        ElevatedButton(
-          onPressed: () {
-            // Implement your login logic here
-            print('Login button pressed');
-          },
-          child: Text(
-            'Login',
-            style: TextStyle(fontSize: 20.sp),
-          ),
-        ),
-        const SizedBox(height: 8.0),
-        TextButton(
-          onPressed: () {
-            // Implement your forgot password logic here
-            print(MediaQuery.of(context).size.height.toString());
-            print(MediaQuery.of(context).size.width.toString());
-          },
-          child: const Text('Forgot Password?'),
-        ),
-      ],
     );
   }
 }

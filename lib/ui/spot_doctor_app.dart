@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spot_doctor/common/constants.dart';
@@ -5,6 +6,7 @@ import 'package:spot_doctor/common/theme.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spot_doctor/ui/screens/authentication/login_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SpotDoctorApp extends StatelessWidget {
   const SpotDoctorApp({Key? key}) : super(key: key);
@@ -19,12 +21,24 @@ class SpotDoctorApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Spot Doctor',
           theme: ThemeData(
-              useMaterial3: true, colorScheme: Style.lightColorScheme),
-          darkTheme:
-              ThemeData(useMaterial3: true, colorScheme: Style.darkColorScheme),
+            useMaterial3: true,
+            colorScheme: Style.lightColorScheme,
+            textTheme: GoogleFonts.robotoFlexTextTheme(
+              Theme.of(context).textTheme,
+            ),
+          ),
+          darkTheme: ThemeData(
+            useMaterial3: true,
+            colorScheme: Style.darkColorScheme,
+            textTheme: GoogleFonts.robotoFlexTextTheme(
+              Theme.of(context).textTheme,
+            ),
+          ),
           initialRoute: AppRoutes.login,
+          supportedLocales: context.supportedLocales,
+          localizationsDelegates: context.localizationDelegates,
           routes: {
-            AppRoutes.login: (context) => const LoginScreen(),
+            AppRoutes.login: (context) => LoginScreen(),
           },
         ),
       ),

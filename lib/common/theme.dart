@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+final fontFamily = GoogleFonts.roboto().toString();
+final titleTextStyle = TextStyle(
+    color: const Color(0xFF374AE3),
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.bold,
+    fontSize: 20.sp);
 
 class Style {
   static const lightColorScheme = ColorScheme(
