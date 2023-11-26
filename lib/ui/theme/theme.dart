@@ -6,8 +6,21 @@ final fontFamily = GoogleFonts.roboto().toString();
 final titleTextStyle = TextStyle(
     color: const Color(0xFF374AE3),
     fontFamily: fontFamily,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w800,
     fontSize: 20.sp);
+
+final displayText = TextStyle(
+    color: const Color(0xFF374AE3),
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.bold,
+    fontSize: 40.sp);
+
+final linkText = TextStyle(
+    color: const Color(0xFF374AE3),
+    fontFamily: fontFamily,
+    fontWeight: FontWeight.w400,
+    fontSize: 15.sp,
+    decoration: TextDecoration.underline);
 
 class Style {
   static const lightColorScheme = ColorScheme(

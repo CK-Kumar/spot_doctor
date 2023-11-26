@@ -1,8 +1,11 @@
 {
     "user":{
-        "start_session":"Log In",
-        "email":"Email Id",
-        "password":"password"
+        "start_session":"LOG IN",
+        "register":"Register",
+        "email":"User Id",
+        "password":"Password",
+        "no_account":"Do not have an account?",
+        "have_account":"Already have an account?"
 
     }
 }
