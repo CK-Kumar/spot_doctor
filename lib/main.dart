@@ -11,7 +11,7 @@ void main() async {
       useOnlyLangCode: true,
       path: 'assets/i18n',
       fallbackLocale: const Locale('en'),
-      child: SpotDoctorApp(),
+      child: const SpotDoctorApp(),
     ),
   );
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "840432959879",
+    "project_id": "spot-doctor",
+    "storage_bucket": "spot-doctor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840432959879:android:59b31961b466fb18845322",
+        "android_client_info": {
+          "package_name": "com.example.spot_doctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCebX1ydVPgE9Yj6oYRwv-Txpc5qYn4gW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
