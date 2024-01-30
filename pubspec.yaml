@@ -39,10 +39,11 @@ dependencies:
   flutter_screenutil: any
   easy_localization: ^3.0.3
   firebase_core: ^2.24.2
-  bloc: ^8.1.2
   firebase_auth: ^4.16.0
   get_it: ^7.6.7
   dartz: ^0.10.1
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.3
 
 dev_dependencies:
   flutter_test:

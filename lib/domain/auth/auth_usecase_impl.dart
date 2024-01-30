@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:spot_doctor/data/auth/auth_repository.dart';
 import 'package:spot_doctor/domain/auth/auth_usecase.dart';
@@ -15,7 +16,7 @@ class AuthUseCaseImpl implements AuthUseCase {
     if (user != null) {
       return Right(user);
     } else {
-      return const Left("Authentication failed");
+      return Left('user.login_error'.tr());
     }
   }
 
@@ -27,7 +28,7 @@ class AuthUseCaseImpl implements AuthUseCase {
     if (user != null) {
       return Right(user);
     } else {
-      return const Left("Registration failed");
+      return Left('user.register_error'.tr());
     }
   }
 

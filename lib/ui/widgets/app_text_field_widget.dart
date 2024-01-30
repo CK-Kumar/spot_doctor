@@ -4,11 +4,13 @@ class SpotDoctorTextField extends StatelessWidget {
   final bool isPassword;
   final String hint;
   final IconData? icon;
+  final TextEditingController textEditingController;
 
   const SpotDoctorTextField({
     required this.isPassword,
     required this.hint,
     this.icon,
+    required this.textEditingController,
     Key? key,
   }) : super(key: key);
 
@@ -23,7 +25,7 @@ class SpotDoctorTextField extends StatelessWidget {
       child: TextFormField(
         autofocus: false,
         obscureText: isPassword,
-        controller: TextEditingController(),
+        controller: textEditingController,
         style: const TextStyle(color: Colors.black),
         decoration: InputDecoration(
           hintText: hint,
