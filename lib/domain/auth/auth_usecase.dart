@@ -7,4 +7,5 @@ abstract class AuthUseCase {
   Future<Either<String, User?>> signUpWithEmailAndPassword(
       String email, String password);
   Future<void> signOut();
+  Future<Either<String, User?>> checkAuthState();
 }

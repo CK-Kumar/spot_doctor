@@ -28,6 +28,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AuthLoading());
         await authUseCase.signOut();
         emit(AuthInitial());
+      } else if (event is CheckAuthStatusEvent) {
+        emit(AuthLoading());
+        final result = await authUseCase.checkAuthState();
+        emit(result.fold(
+            (error) => AuthInitial(), (user) => AuthSuccess(user!)));
       }
     });
   }

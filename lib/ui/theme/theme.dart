@@ -22,6 +22,13 @@ final linkText = TextStyle(
     fontSize: 15.sp,
     decoration: TextDecoration.underline);
 
+final menuText = TextStyle(
+  color: const Color(0xFF374AE3),
+  fontFamily: fontFamily,
+  fontWeight: FontWeight.w400,
+  fontSize: 18.sp,
+);
+
 class Style {
   static const lightColorScheme = ColorScheme(
     brightness: Brightness.light,

@@ -40,4 +40,15 @@ class FirebaseAuthRepository implements AuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+
+  @override
+  Future<User?> checkAuthState() async {
+    try {
+      final User? user = _firebaseAuth.currentUser;
+      return user;
+    } catch (e) {
+      // Handle errors if any
+      return null;
+    }
+  }
 }

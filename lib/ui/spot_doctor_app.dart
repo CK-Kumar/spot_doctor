@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spot_doctor/ui/screens/authentication/register_screen.dart';
 import 'package:spot_doctor/ui/screens/home/home_screen.dart';
+import 'package:spot_doctor/ui/screens/splash/splash_screen.dart';
 import 'package:spot_doctor/utils/constants.dart';
 import 'package:spot_doctor/ui/theme/theme.dart';
 
@@ -36,12 +37,13 @@ class SpotDoctorApp extends StatelessWidget {
               Theme.of(context).textTheme,
             ),
           ),
-          initialRoute: AppRoutes.login,
+          initialRoute: AppRoutes.splash,
           supportedLocales: context.supportedLocales,
           localizationsDelegates: context.localizationDelegates,
           routes: {
-            AppRoutes.login: (context) => LoginScreen(),
-            AppRoutes.register: (context) => RegisterScreen(),
+            AppRoutes.splash: (context) => const SplashScreen(),
+            AppRoutes.login: (context) => const LoginScreen(),
+            AppRoutes.register: (context) => const RegisterScreen(),
             AppRoutes.home: (context) => const HomeScreen()
           },
         ),

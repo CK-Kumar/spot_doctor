@@ -36,4 +36,14 @@ class AuthUseCaseImpl implements AuthUseCase {
   Future<void> signOut() async {
     await _authRepository.signOut();
   }
+
+  @override
+  Future<Either<String, User?>> checkAuthState() async {
+    final user = await _authRepository.checkAuthState();
+    if (user != null) {
+      return Right(user);
+    } else {
+      return Left('user.not_authenticated'.tr());
+    }
+  }
 }
