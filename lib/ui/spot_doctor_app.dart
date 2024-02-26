@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spot_doctor/ui/screens/authentication/register_screen.dart';
+import 'package:spot_doctor/ui/screens/chat/chat_screen.dart';
 import 'package:spot_doctor/ui/screens/home/home_screen.dart';
 import 'package:spot_doctor/ui/screens/splash/splash_screen.dart';
 import 'package:spot_doctor/utils/constants.dart';
@@ -44,7 +45,8 @@ class SpotDoctorApp extends StatelessWidget {
             AppRoutes.splash: (context) => const SplashScreen(),
             AppRoutes.login: (context) => const LoginScreen(),
             AppRoutes.register: (context) => const RegisterScreen(),
-            AppRoutes.home: (context) => const HomeScreen()
+            AppRoutes.home: (context) => const HomeScreen(),
+            AppRoutes.chat: (context) => const ChatScreen()
           },
         ),
       ),

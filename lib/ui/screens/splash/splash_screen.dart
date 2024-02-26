@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:spot_doctor/ui/blocs/auth/auth_bloc.dart';
 import 'package:spot_doctor/ui/theme/theme.dart';
@@ -46,11 +47,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: displayText,
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 5.0),
-                  child: SafeArea(
+                  padding: EdgeInsets.only(bottom: 5.0.h),
+                  child: const SafeArea(
                     bottom: true,
                     child: LinearProgressIndicator(),
                   ),

@@ -10,5 +10,8 @@
         "register_error": "An error occured while registering the user.",
         "register_success": "Registered Successfully! Login to access.",
         "not_authenticated": "No user logged in"
+    },
+    "home":{
+        "try_chat":"Try AI Medical chat"
     }
 }
